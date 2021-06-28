@@ -39,7 +39,7 @@ namespace EmployeeWageComputation
                 emp_Wage = emp_Hour * EMP_WAGE_PER_HOUR;
                 total_wage += emp_Wage;
             }
-            Console.WriteLine("Employee Wage per day = "+total_wage);
+            Console.WriteLine("Employee Wage for "+WORKING_DAYS+ " Working Day per Month = " + total_wage);
         }
     }
 }
