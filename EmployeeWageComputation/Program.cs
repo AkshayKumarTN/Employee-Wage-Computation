@@ -4,35 +4,42 @@ namespace EmployeeWageComputation
 {
     class Program
     {
+        public const int FULL_TIME = 1;
+        public const int PART_TIME = 2;
+        public const int EMP_WAGE_PER_HOUR = 20;
+        public const int WORKING_DAYS = 20;
         
+
         static void Main(string[] args)
         {
-            int emp_Wage_Per_Hour = 20;
+            
             int emp_Wage = 0;
             int emp_Hour = 0;
-            int employee_Present = 1;
-            int employee_Part_Time = 2;
+            int total_wage = 0;
+
             Random random = new Random();
-            int empInput = random.Next(0,3);
-            switch(empInput)
+            
+            for (int day = 1; day <= WORKING_DAYS; day++)
             {
-                case 1:
-                    Console.WriteLine("Employee Full Time");
-                    emp_Hour = 8;
-                    break;
+                int empInput = random.Next(0, 3);
+                switch (empInput)
+                {
+                    case FULL_TIME:
+                        emp_Hour = 8;
+                        break;
 
-                case 2:
-                    Console.WriteLine("Employee Part Time");
-                    emp_Hour = 4;
-                    break;
+                    case PART_TIME:
+                        emp_Hour = 4;
+                        break;
 
-                default:
-                    Console.WriteLine("Employee is Absent");
-                    break;
+                    default:
+                        break;
 
+                }
+                emp_Wage = emp_Hour * EMP_WAGE_PER_HOUR;
+                total_wage += emp_Wage;
             }
-            emp_Wage = emp_Hour * emp_Wage_Per_Hour;
-            Console.WriteLine("Employee Wage per day = "+emp_Wage);
+            Console.WriteLine("Employee Wage per day = "+total_wage);
         }
     }
 }
