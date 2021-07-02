@@ -7,7 +7,8 @@ namespace EmployeeWageComputation
         static void Main(string[] args)
         {
             Console.WriteLine("\n Employee Wage Computation \n");
-            EmployeeWage.computeEmpWage();
+            EmployeeWage.computeEmpWage("DELL",20,20,100);
+            EmployeeWage.computeEmpWage("HP", 20, 20, 100);
         }
     }
 }
