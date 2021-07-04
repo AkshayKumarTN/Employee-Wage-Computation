@@ -47,6 +47,7 @@ namespace EmployeeWageComputation
             int empWorkingHour = 0;
 
             Random random = new Random();
+            Console.WriteLine(" "+ employeeWageObject.companyName + " Company");
 
             while (day < employeeWageObject.maxWorkingDays && empWorkingHour < employeeWageObject.maxWorkingHours)
             {
@@ -69,11 +70,15 @@ namespace EmployeeWageComputation
                 empWorkingHour += empHour;
                 totalWage += empWage;
                 if (empInput != 0)
+                {
                     day++;
+                    Console.WriteLine(" Day-" + day + " : Employee Working hours --> " + empHour + " || Employee Wage for the Day --> " + empWage);
+                }
             }
             employeeWageObject.totalEmpWage = totalWage;
             //Displaying Total Employee Wage for given Company ......
             Console.WriteLine(" " + employeeWageObject.companyName + "'s Employee Wage for " + day + " days = " + employeeWageObject.totalEmpWage);
+            Console.WriteLine();
         }
     }
 }
