@@ -4,7 +4,14 @@ using System.Text;
 
 namespace EmployeeWageComputation
 {
-    class CompanyEmpWage
+    public interface IComputeEmpWage
+    {
+        // Implemented Interface........
+        public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+        public void computeEmpWage();
+
+    }
+    class CompanyEmpWage : IComputeEmpWage
     {
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
