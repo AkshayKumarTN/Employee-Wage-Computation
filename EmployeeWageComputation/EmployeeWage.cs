@@ -19,7 +19,8 @@ namespace EmployeeWageComputation
             this.empWagePerHour = empWagePerHour;
             this.maxWorkingDays = maxWorkingDays;
             this.maxWorkingHours = maxWorkingHours; 
-    }
+        }
+
         
     }
 }

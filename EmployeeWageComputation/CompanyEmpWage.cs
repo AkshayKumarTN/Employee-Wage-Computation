@@ -18,16 +18,19 @@ namespace EmployeeWageComputation
         // No. of Company is given.....
         public int numberOfCompany = 0;
         public LinkedList<EmployeeWage> companyEmpWageList;
+        public Dictionary<string, EmployeeWage> companyEmpWageMap;
         // Object Array is Created......
         public CompanyEmpWage()
         {
             this.companyEmpWageList = new LinkedList<EmployeeWage>();
+            this.companyEmpWageMap = new Dictionary<string, EmployeeWage>();
         }
         // Adding Company....
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             EmployeeWage employeeWage = new EmployeeWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             this.companyEmpWageList.AddLast(employeeWage);
+            this.companyEmpWageMap.Add(company, employeeWage);
         }
         public void computeEmpWage()
         {
@@ -79,6 +82,10 @@ namespace EmployeeWageComputation
             //Displaying Total Employee Wage for given Company ......
             Console.WriteLine(" " + employeeWageObject.companyName + "'s Employee Wage for " + day + " days = " + employeeWageObject.totalEmpWage);
             Console.WriteLine();
+        }
+        public int GetTotalWage(String Company)
+        {
+            return this.companyEmpWageMap[Company].totalEmpWage;
         }
     }
 }
